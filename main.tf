@@ -16,4 +16,7 @@ module "write" {
 
 variable "answers" {
   type = map(string)
+  default = {
+    "" = ""
+  }
 }
