@@ -14,6 +14,12 @@ module "write" {
   answers = var.answers
 }
 
+module "data" {
+  source = "./modules/data"
+  generated_file_path = module.files.first_file_name
+  depends_on = [ module.files ]
+}
+
 variable "answers" {
   type = map(string)
   default = {
